@@ -3,11 +3,11 @@
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `environmentId`    | *string*           | :heavy_check_mark: | N/A                |
-| `id`               | *string*           | :heavy_minus_sign: | N/A                |
-| `organizationId`   | *string*           | :heavy_check_mark: | N/A                |
-| `key`              | *string*           | :heavy_check_mark: | N/A                |
-| `name`             | *string*           | :heavy_check_mark: | N/A                |
-| `subscribers`      | *string*[]         | :heavy_check_mark: | N/A                |
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `environmentId`                                                                        | [components.TopicDtoEnvironmentId](../../models/components/topicdtoenvironmentid.md)   | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `id`                                                                                   | [components.TopicDtoId](../../models/components/topicdtoid.md)                         | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `organizationId`                                                                       | [components.TopicDtoOrganizationId](../../models/components/topicdtoorganizationid.md) | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `key`                                                                                  | [components.TopicDtoKey](../../models/components/topicdtokey.md)                       | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `name`                                                                                 | [components.TopicDtoName](../../models/components/topicdtoname.md)                     | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `subscribers`                                                                          | *string*[]                                                                             | :heavy_check_mark:                                                                     | N/A                                                                                    |

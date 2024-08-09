@@ -1,40 +1,126 @@
 lockVersion: 2.0.0
 id: f50499c4-d106-4975-983f-ead3a386ec53
 management:
-  docChecksum: 1eadec3f5478d02504091b0e2b5b2ee0
+  docChecksum: dbddebe7564a165cf571419c3a8f6d59
   docVersion: "1.0"
-  speakeasyVersion: 1.322.3
-  generationVersion: 2.354.2
-  releaseVersion: 0.0.1-alpha.9
-  configChecksum: 29fb899ef19d96629eaf20333f0647b0
-  repoURL: https://github.com/novuhq/novu-node.git
-  installationURL: https://github.com/novuhq/novu-node
+  speakeasyVersion: 1.358.0
+  generationVersion: 2.390.6
+  releaseVersion: 0.0.1-alpha.10
+  configChecksum: 6c89568ad5bb1893767117b0a04ea113
+  repoURL: https://github.com/novuhq/novu-ts.git
+  installationURL: https://github.com/novuhq/novu-ts
   published: true
 features:
   typescript:
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.5
-    core: 3.10.2
+    constsAndDefaults: 0.1.6
+    core: 3.12.3
+    defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
+    envVarSecurityUsage: 0.1.1
     examples: 2.81.4
     flattening: 2.81.1
-    globalSecurity: 2.82.9
+    globalSecurity: 2.82.11
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
     groups: 2.81.2
     nameOverrides: 2.81.2
     nullables: 0.1.0
-    pagination: 2.82.2
+    pagination: 2.82.6
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.1.0
-    unions: 2.85.5
+    unions: 2.85.6
 generatedFiles:
+  - src/funcs/cancel.ts
+  - src/funcs/trigger.ts
+  - src/funcs/triggerBroadcast.ts
+  - src/funcs/triggerBulk.ts
+  - src/funcs/changesApply.ts
+  - src/funcs/changesApplyBulk.ts
+  - src/funcs/changesCount.ts
+  - src/funcs/changesRetrieve.ts
+  - src/funcs/environmentsList.ts
+  - src/funcs/environmentsRetrieve.ts
+  - src/funcs/executionDetailsRetrieve.ts
+  - src/funcs/feedsCreate.ts
+  - src/funcs/feedsDelete.ts
+  - src/funcs/feedsRetrieve.ts
+  - src/funcs/integrationsCreate.ts
+  - src/funcs/integrationsDelete.ts
+  - src/funcs/integrationsList.ts
+  - src/funcs/integrationsListActive.ts
+  - src/funcs/integrationsSetAsPrimary.ts
+  - src/funcs/integrationsUpdate.ts
+  - src/funcs/layoutsCreate.ts
+  - src/funcs/layoutsDelete.ts
+  - src/funcs/layoutsList.ts
+  - src/funcs/layoutsRetrieve.ts
+  - src/funcs/layoutsSetAsDefault.ts
+  - src/funcs/layoutsUpdate.ts
+  - src/funcs/messagesDelete.ts
+  - src/funcs/messagesDeleteByTransactionId.ts
+  - src/funcs/messagesRetrieve.ts
+  - src/funcs/workflowGroupsCreate.ts
+  - src/funcs/workflowGroupsDelete.ts
+  - src/funcs/workflowGroupsList.ts
+  - src/funcs/workflowGroupsRetrieve.ts
+  - src/funcs/workflowGroupsUpdate.ts
+  - src/funcs/notificationsList.ts
+  - src/funcs/notificationsRetrieve.ts
+  - src/funcs/organizationsEEOrganizationControllerRenameOrganization.ts
+  - src/funcs/organizationsRetrieve.ts
+  - src/funcs/organizationsUpdate.ts
+  - src/funcs/subscribersCreate.ts
+  - src/funcs/subscribersCreateBulk.ts
+  - src/funcs/subscribersDelete.ts
+  - src/funcs/subscribersList.ts
+  - src/funcs/subscribersRetrieve.ts
+  - src/funcs/subscribersUpdate.ts
+  - src/funcs/tenantsCreate.ts
+  - src/funcs/tenantsDelete.ts
+  - src/funcs/tenantsList.ts
+  - src/funcs/tenantsRetrieve.ts
+  - src/funcs/tenantsUpdate.ts
+  - src/funcs/topicsCreate.ts
+  - src/funcs/topicsDelete.ts
+  - src/funcs/topicsList.ts
+  - src/funcs/topicsRename.ts
+  - src/funcs/topicsRetrieve.ts
+  - src/funcs/workflowsCreate.ts
+  - src/funcs/workflowsDelete.ts
+  - src/funcs/workflowsList.ts
+  - src/funcs/workflowsRetrieve.ts
+  - src/funcs/workflowsUpdate.ts
+  - src/funcs/environmentsApiKeysList.ts
+  - src/funcs/environmentsApiKeysRegenerate.ts
+  - src/funcs/integrationsWebhooksRetrieve.ts
+  - src/funcs/notificationsStatsGraph.ts
+  - src/funcs/notificationsStatsRetrieve.ts
+  - src/funcs/subscribersCredentialsAppend.ts
+  - src/funcs/subscribersCredentialsDelete.ts
+  - src/funcs/subscribersCredentialsUpdate.ts
+  - src/funcs/subscribersAuthenticationChatAccessOauth.ts
+  - src/funcs/subscribersAuthenticationChatAccessOauthCallBack.ts
+  - src/funcs/subscribersMessagesMarkAll.ts
+  - src/funcs/subscribersMessagesMarkAllAs.ts
+  - src/funcs/subscribersMessagesUpdateAsSeen.ts
+  - src/funcs/subscribersNotificationsRetrieve.ts
+  - src/funcs/subscribersNotificationsUnseenCount.ts
+  - src/funcs/subscribersPropertiesUpdateOnlineFlag.ts
+  - src/funcs/subscribersPreferencesList.ts
+  - src/funcs/subscribersPreferencesRetrieveByLevel.ts
+  - src/funcs/subscribersPreferencesUpdate.ts
+  - src/funcs/subscribersPreferencesUpdateGlobal.ts
+  - src/funcs/topicsSubscribersAssign.ts
+  - src/funcs/topicsSubscribersDelete.ts
+  - src/funcs/topicsSubscribersRetrieve.ts
+  - src/funcs/workflowsVariablesRetrieve.ts
+  - src/funcs/workflowsStatusUpdate.ts
   - src/sdk/changes.ts
   - src/sdk/apikeys.ts
   - src/sdk/environments.ts
-  - src/sdk/events.ts
   - src/sdk/executiondetails.ts
   - src/sdk/feeds.ts
   - src/sdk/webhooks.ts
@@ -44,8 +130,6 @@ generatedFiles:
   - src/sdk/workflowgroups.ts
   - src/sdk/stats.ts
   - src/sdk/notifications.ts
-  - src/sdk/branding.ts
-  - src/sdk/members.ts
   - src/sdk/organizations.ts
   - src/sdk/credentials.ts
   - src/sdk/authentication.ts
@@ -66,12 +150,15 @@ generatedFiles:
   - RUNTIMES.md
   - jsr.json
   - package.json
+  - src/core.ts
   - src/index.ts
   - src/lib/base64.ts
   - src/lib/config.ts
+  - src/lib/dlv.ts
   - src/lib/encodings.ts
   - src/lib/http.ts
   - src/lib/is-plain-object.ts
+  - src/lib/matchers.ts
   - src/lib/primitives.ts
   - src/lib/retries.ts
   - src/lib/schemas.ts
@@ -79,30 +166,30 @@ generatedFiles:
   - src/lib/security.ts
   - src/lib/url.ts
   - src/sdk/index.ts
+  - src/models/errors/httpclienterrors.ts
   - src/models/errors/sdkerror.ts
   - src/models/errors/sdkvalidationerror.ts
   - src/types/blobs.ts
   - src/types/enums.ts
+  - src/types/fp.ts
   - src/types/index.ts
   - src/types/operations.ts
   - src/types/rfcdate.ts
   - tsconfig.json
+  - src/models/components/databooleandto.ts
   - src/models/components/triggereventresponsedto.ts
   - src/models/components/triggereventrequestdto.ts
   - src/models/components/subscriberpayloaddto.ts
-  - src/models/components/subscriberchanneldto.ts
-  - src/models/components/channelcredentialsdto.ts
   - src/models/components/topicpayloaddto.ts
   - src/models/components/tenantpayloaddto.ts
+  - src/models/components/triggereventtoallrequestdto.ts
+  - src/models/components/bulktriggereventdto.ts
   - src/models/components/changeresponsedto.ts
   - src/models/components/bulkapplychangedto.ts
   - src/models/components/datanumberdto.ts
   - src/models/components/changesresponsedto.ts
   - src/models/components/environmentresponsedto.ts
   - src/models/components/apikey.ts
-  - src/models/components/databooleandto.ts
-  - src/models/components/triggereventtoallrequestdto.ts
-  - src/models/components/bulktriggereventdto.ts
   - src/models/components/executiondetailsresponsedto.ts
   - src/models/components/feedresponsedto.ts
   - src/models/components/createfeedrequestdto.ts
@@ -118,29 +205,18 @@ generatedFiles:
   - src/models/components/updatelayoutrequestdto.ts
   - src/models/components/deletemessageresponsedto.ts
   - src/models/components/activitiesresponsedto.ts
-  - src/models/components/activitynotificationresponsedto.ts
-  - src/models/components/activitynotificationtemplateresponsedto.ts
-  - src/models/components/notificationtrigger.ts
-  - src/models/components/notificationtriggervariable.ts
-  - src/models/components/activitynotificationsubscriberresponsedto.ts
-  - src/models/components/activitynotificationjobresponsedto.ts
-  - src/models/components/activitynotificationstepresponsedto.ts
-  - src/models/components/messagetemplatedto.ts
-  - src/models/components/activitynotificationexecutiondetailresponsedto.ts
   - src/models/components/notificationgroupresponsedto.ts
   - src/models/components/createnotificationgrouprequestdto.ts
   - src/models/components/deletenotificationgroupresponsedto.ts
+  - src/models/components/activitynotificationresponsedto.ts
+  - src/models/components/activitynotificationtemplateresponsedto.ts
+  - src/models/components/activitynotificationsubscriberresponsedto.ts
   - src/models/components/activitygraphstatesresponse.ts
   - src/models/components/activitystatsresponsedto.ts
-  - src/models/components/organizationresponsedto.ts
-  - src/models/components/ipartnerconfigurationresponsedto.ts
-  - src/models/components/organizationbrandingresponsedto.ts
-  - src/models/components/createorganizationdto.ts
   - src/models/components/renameorganizationdto.ts
+  - src/models/components/organizationresponsedto.ts
+  - src/models/components/organizationbrandingresponsedto.ts
   - src/models/components/updatebrandingdetailsdto.ts
-  - src/models/components/memberresponsedto.ts
-  - src/models/components/memberuserdto.ts
-  - src/models/components/memberinvitedto.ts
   - src/models/components/subscriberresponsedto.ts
   - src/models/components/channelsettings.ts
   - src/models/components/channelcredentials.ts
@@ -154,6 +230,8 @@ generatedFiles:
   - src/models/components/messagemarkasrequestdto.ts
   - src/models/components/messageresponsedto.ts
   - src/models/components/workflowresponse.ts
+  - src/models/components/notificationtrigger.ts
+  - src/models/components/notificationtriggervariable.ts
   - src/models/components/notificationstep.ts
   - src/models/components/notificationstepvariant.ts
   - src/models/components/messagetemplate.ts
@@ -202,9 +280,9 @@ generatedFiles:
   - src/models/components/variablesresponsedto.ts
   - src/models/components/changeworkflowstatusrequestdto.ts
   - src/models/components/security.ts
+  - src/models/operations/eventscontrollercancel.ts
   - src/models/operations/changescontrollerapplydiff.ts
   - src/models/operations/changescontrollergetchanges.ts
-  - src/models/operations/eventscontrollercancel.ts
   - src/models/operations/executiondetailscontrollergetexecutiondetailsfornotification.ts
   - src/models/operations/feedscontrollerdeletefeedbyid.ts
   - src/models/operations/integrationscontrollerremoveintegration.ts
@@ -225,7 +303,6 @@ generatedFiles:
   - src/models/operations/notificationscontrollerlistnotifications.ts
   - src/models/operations/notificationscontrollergetnotification.ts
   - src/models/operations/notificationscontrollergetactivitygraphstats.ts
-  - src/models/operations/organizationcontrollerremove.ts
   - src/models/operations/subscriberscontrollerremovesubscriber.ts
   - src/models/operations/subscriberscontrollerlistsubscribers.ts
   - src/models/operations/subscriberscontrollergetsubscriber.ts
@@ -264,9 +341,11 @@ generatedFiles:
   - src/models/errors/index.ts
   - src/models/components/index.ts
   - src/models/operations/index.ts
+  - docs/models/components/databooleandto.md
   - docs/models/components/triggereventresponsedtostatus.md
   - docs/models/components/triggereventresponsedto.md
   - docs/models/components/actor.md
+  - docs/models/components/controls.md
   - docs/models/components/triggereventrequestdtooverrides.md
   - docs/models/components/triggereventrequestdtopayload.md
   - docs/models/components/tenant.md
@@ -274,31 +353,27 @@ generatedFiles:
   - docs/models/components/triggereventrequestdto.md
   - docs/models/components/subscriberpayloaddtodata.md
   - docs/models/components/subscriberpayloaddto.md
-  - docs/models/components/subscriberchanneldtoproviderid.md
-  - docs/models/components/subscriberchanneldto.md
-  - docs/models/components/channelcredentialsdto.md
+  - docs/models/components/topickey.md
   - docs/models/components/topicpayloaddtotype.md
   - docs/models/components/topicpayloaddto.md
   - docs/models/components/tenantpayloaddtodata.md
   - docs/models/components/tenantpayloaddto.md
-  - docs/models/components/change.md
-  - docs/models/components/type.md
-  - docs/models/components/changeresponsedto.md
-  - docs/models/components/bulkapplychangedto.md
-  - docs/models/components/datanumberdto.md
-  - docs/models/components/changesresponsedto.md
-  - docs/models/components/apikeys.md
-  - docs/models/components/environmentresponsedto.md
-  - docs/models/components/apikey.md
-  - docs/models/components/databooleandto.md
   - docs/models/components/triggereventtoallrequestdtoactor.md
   - docs/models/components/triggereventtoallrequestdtooverrides.md
   - docs/models/components/triggereventtoallrequestdtopayload.md
   - docs/models/components/triggereventtoallrequestdtotenant.md
   - docs/models/components/triggereventtoallrequestdto.md
   - docs/models/components/bulktriggereventdto.md
+  - docs/models/components/change.md
+  - docs/models/components/type.md
+  - docs/models/components/changeresponsedto.md
+  - docs/models/components/bulkapplychangedto.md
+  - docs/models/components/datanumberdto.md
+  - docs/models/components/changesresponsedto.md
+  - docs/models/components/environmentresponsedto.md
+  - docs/models/components/apikey.md
   - docs/models/components/executiondetailsresponsedtochannel.md
-  - docs/models/components/executiondetailsresponsedtosource.md
+  - docs/models/components/source.md
   - docs/models/components/executiondetailsresponsedtostatus.md
   - docs/models/components/executiondetailsresponsedto.md
   - docs/models/components/feedresponsedto.md
@@ -316,59 +391,51 @@ generatedFiles:
   - docs/models/components/channel.md
   - docs/models/components/createintegrationrequestdto.md
   - docs/models/components/updateintegrationrequestdto.md
+  - docs/models/components/id.md
   - docs/models/components/createlayoutresponsedto.md
+  - docs/models/components/creatorid.md
+  - docs/models/components/getlayoutresponsedtoenvironmentid.md
+  - docs/models/components/getlayoutresponsedtoid.md
+  - docs/models/components/organizationid.md
   - docs/models/components/getlayoutresponsedtochannel.md
-  - docs/models/components/variables.md
+  - docs/models/components/description.md
+  - docs/models/components/identifier.md
+  - docs/models/components/getlayoutresponsedtoname.md
   - docs/models/components/getlayoutresponsedto.md
+  - docs/models/components/updatelayoutresponsedtocreatorid.md
+  - docs/models/components/updatelayoutresponsedtoenvironmentid.md
+  - docs/models/components/updatelayoutresponsedtoid.md
+  - docs/models/components/updatelayoutresponsedtoorganizationid.md
   - docs/models/components/updatelayoutresponsedtochannel.md
-  - docs/models/components/updatelayoutresponsedtovariables.md
+  - docs/models/components/updatelayoutresponsedtodescription.md
+  - docs/models/components/updatelayoutresponsedtoidentifier.md
+  - docs/models/components/updatelayoutresponsedtoname.md
   - docs/models/components/updatelayoutresponsedto.md
-  - docs/models/components/updatelayoutrequestdtovariables.md
+  - docs/models/components/updatelayoutrequestdtodescription.md
+  - docs/models/components/updatelayoutrequestdtoidentifier.md
+  - docs/models/components/updatelayoutrequestdtoname.md
+  - docs/models/components/variables.md
   - docs/models/components/updatelayoutrequestdto.md
-  - docs/models/components/deletemessageresponsedtostatus.md
+  - docs/models/components/status.md
   - docs/models/components/deletemessageresponsedto.md
   - docs/models/components/activitiesresponsedto.md
-  - docs/models/components/activitynotificationresponsedtochannels.md
-  - docs/models/components/activitynotificationresponsedto.md
-  - docs/models/components/activitynotificationtemplateresponsedto.md
-  - docs/models/components/notificationtriggertype.md
-  - docs/models/components/notificationtrigger.md
-  - docs/models/components/notificationtriggervariable.md
-  - docs/models/components/activitynotificationsubscriberresponsedto.md
-  - docs/models/components/digest.md
-  - docs/models/components/payload.md
-  - docs/models/components/activitynotificationjobresponsedtoproviderid.md
-  - docs/models/components/activitynotificationjobresponsedto.md
-  - docs/models/components/activitynotificationstepresponsedto.md
-  - docs/models/components/messagetemplatedto.md
-  - docs/models/components/providerid.md
-  - docs/models/components/source.md
-  - docs/models/components/status.md
-  - docs/models/components/activitynotificationexecutiondetailresponsedto.md
   - docs/models/components/notificationgroupresponsedto.md
   - docs/models/components/createnotificationgrouprequestdto.md
   - docs/models/components/deletenotificationgroupresponsedtostatus.md
   - docs/models/components/deletenotificationgroupresponsedto.md
+  - docs/models/components/activitynotificationresponsedtochannels.md
+  - docs/models/components/activitynotificationresponsedto.md
+  - docs/models/components/activitynotificationtemplateresponsedto.md
+  - docs/models/components/activitynotificationsubscriberresponsedto.md
   - docs/models/components/channels.md
   - docs/models/components/activitygraphstatesresponse.md
   - docs/models/components/activitystatsresponsedto.md
+  - docs/models/components/renameorganizationdto.md
   - docs/models/components/organizationresponsedto.md
-  - docs/models/components/partnertype.md
-  - docs/models/components/ipartnerconfigurationresponsedto.md
   - docs/models/components/direction.md
   - docs/models/components/organizationbrandingresponsedto.md
-  - docs/models/components/jobtitle.md
-  - docs/models/components/productusecases.md
-  - docs/models/components/createorganizationdto.md
-  - docs/models/components/renameorganizationdto.md
   - docs/models/components/updatebrandingdetailsdto.md
-  - docs/models/components/memberstatus.md
-  - docs/models/components/roles.md
-  - docs/models/components/memberresponsedto.md
-  - docs/models/components/memberuserdto.md
-  - docs/models/components/memberinvitedto.md
   - docs/models/components/subscriberresponsedto.md
-  - docs/models/components/channelsettingsproviderid.md
   - docs/models/components/channelsettings.md
   - docs/models/components/channelcredentials.md
   - docs/models/components/data.md
@@ -378,7 +445,6 @@ generatedFiles:
   - docs/models/components/deletesubscriberresponsedto.md
   - docs/models/components/updatesubscriberrequestdtodata.md
   - docs/models/components/updatesubscriberrequestdto.md
-  - docs/models/components/updatesubscriberchannelrequestdtoproviderid.md
   - docs/models/components/updatesubscriberchannelrequestdto.md
   - docs/models/components/feedidentifier.md
   - docs/models/components/markas.md
@@ -387,6 +453,7 @@ generatedFiles:
   - docs/models/components/messagemarkasrequestdtomarkas.md
   - docs/models/components/messageid.md
   - docs/models/components/messagemarkasrequestdto.md
+  - docs/models/components/feedid.md
   - docs/models/components/messageresponsedtochannel.md
   - docs/models/components/content.md
   - docs/models/components/overrides.md
@@ -396,6 +463,9 @@ generatedFiles:
   - docs/models/components/workflowresponsedata.md
   - docs/models/components/workflowintegrationstatus.md
   - docs/models/components/workflowresponse.md
+  - docs/models/components/notificationtriggertype.md
+  - docs/models/components/notificationtrigger.md
+  - docs/models/components/notificationtriggervariable.md
   - docs/models/components/parentid.md
   - docs/models/components/metadata.md
   - docs/models/components/replycallback.md
@@ -438,7 +508,7 @@ generatedFiles:
   - docs/models/components/emailblock.md
   - docs/models/components/textalign.md
   - docs/models/components/emailblockstyles.md
-  - docs/models/components/markmessageactionasseendtopayload.md
+  - docs/models/components/payload.md
   - docs/models/components/markmessageactionasseendtostatus.md
   - docs/models/components/markmessageactionasseendto.md
   - docs/models/components/unseencountresponse.md
@@ -451,6 +521,8 @@ generatedFiles:
   - docs/models/components/channelpreferencetype.md
   - docs/models/components/channelpreference.md
   - docs/models/components/updatesubscriberglobalpreferencesrequestdto.md
+  - docs/models/components/environmentid.md
+  - docs/models/components/createtenantresponsedtoid.md
   - docs/models/components/createtenantresponsedtodata.md
   - docs/models/components/createtenantresponsedto.md
   - docs/models/components/createtenantrequestdtodata.md
@@ -462,14 +534,38 @@ generatedFiles:
   - docs/models/components/updatetenantrequestdtodata.md
   - docs/models/components/updatetenantrequestdto.md
   - docs/models/components/createtopicresponsedto.md
+  - docs/models/components/key.md
+  - docs/models/components/name.md
   - docs/models/components/createtopicrequestdto.md
   - docs/models/components/filtertopicsresponsedto.md
+  - docs/models/components/topicdtoenvironmentid.md
+  - docs/models/components/topicdtoid.md
+  - docs/models/components/topicdtoorganizationid.md
+  - docs/models/components/topicdtokey.md
+  - docs/models/components/topicdtoname.md
   - docs/models/components/topicdto.md
+  - docs/models/components/renametopicresponsedtoenvironmentid.md
+  - docs/models/components/renametopicresponsedtoid.md
+  - docs/models/components/renametopicresponsedtoorganizationid.md
+  - docs/models/components/renametopicresponsedtokey.md
+  - docs/models/components/renametopicresponsedtoname.md
   - docs/models/components/renametopicresponsedto.md
+  - docs/models/components/renametopicrequestdtoname.md
   - docs/models/components/renametopicrequestdto.md
+  - docs/models/components/gettopicresponsedtoenvironmentid.md
+  - docs/models/components/gettopicresponsedtoid.md
+  - docs/models/components/gettopicresponsedtoorganizationid.md
+  - docs/models/components/gettopicresponsedtokey.md
+  - docs/models/components/gettopicresponsedtoname.md
   - docs/models/components/gettopicresponsedto.md
   - docs/models/components/addsubscribersrequestdto.md
   - docs/models/components/removesubscribersrequestdto.md
+  - docs/models/components/topicsubscriberdtoenvironmentid.md
+  - docs/models/components/topicsubscriberdtoorganizationid.md
+  - docs/models/components/subscriberid.md
+  - docs/models/components/topicid.md
+  - docs/models/components/externalsubscriberid.md
+  - docs/models/components/topicsubscriberdtotopickey.md
   - docs/models/components/topicsubscriberdto.md
   - docs/models/components/createworkflowrequestdtodata.md
   - docs/models/components/createworkflowrequestdtonotificationgroup.md
@@ -482,9 +578,9 @@ generatedFiles:
   - docs/models/components/variablesresponsedto.md
   - docs/models/components/changeworkflowstatusrequestdto.md
   - docs/models/components/security.md
+  - docs/models/operations/eventscontrollercancelrequest.md
   - docs/models/operations/changescontrollerapplydiffrequest.md
   - docs/models/operations/changescontrollergetchangesrequest.md
-  - docs/models/operations/eventscontrollercancelrequest.md
   - docs/models/operations/executiondetailscontrollergetexecutiondetailsfornotificationrequest.md
   - docs/models/operations/feedscontrollerdeletefeedbyidrequest.md
   - docs/models/operations/integrationscontrollerremoveintegrationrequest.md
@@ -509,7 +605,6 @@ generatedFiles:
   - docs/models/operations/notificationscontrollerlistnotificationsrequest.md
   - docs/models/operations/notificationscontrollergetnotificationrequest.md
   - docs/models/operations/notificationscontrollergetactivitygraphstatsrequest.md
-  - docs/models/operations/organizationcontrollerremoverequest.md
   - docs/models/operations/subscriberscontrollerremovesubscriberrequest.md
   - docs/models/operations/subscriberscontrollerlistsubscribersrequest.md
   - docs/models/operations/subscriberscontrollerlistsubscribersresponsebody.md
@@ -557,7 +652,6 @@ generatedFiles:
   - docs/sdks/changes/README.md
   - docs/sdks/environments/README.md
   - docs/sdks/apikeys/README.md
-  - docs/sdks/events/README.md
   - docs/sdks/executiondetails/README.md
   - docs/sdks/feeds/README.md
   - docs/sdks/integrations/README.md
@@ -568,8 +662,6 @@ generatedFiles:
   - docs/sdks/notifications/README.md
   - docs/sdks/stats/README.md
   - docs/sdks/organizations/README.md
-  - docs/sdks/branding/README.md
-  - docs/sdks/members/README.md
   - docs/sdks/subscribers/README.md
   - docs/sdks/credentials/README.md
   - docs/sdks/authentication/README.md
@@ -588,3 +680,4 @@ generatedFiles:
   - src/hooks/hooks.ts
   - src/hooks/types.ts
   - src/hooks/index.ts
+  - CONTRIBUTING.md

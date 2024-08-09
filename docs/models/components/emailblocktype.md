@@ -5,5 +5,5 @@
 
 | Name     | Value    |
 | -------- | -------- |
-| `Text`   | text     |
 | `Button` | button   |
+| `Text`   | text     |

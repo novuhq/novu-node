@@ -114,7 +114,7 @@ const novu = new Novu({
 });
 
 async function run() {
-  const result = await novu.tenants.list(7685.78, 10);
+  const result = await novu.tenants.list();
 
   for await (const page of result) {
     // handle page

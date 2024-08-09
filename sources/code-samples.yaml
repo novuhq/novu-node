@@ -3,400 +3,444 @@ info:
   title: CodeSamples overlay for typescript target
   version: 0.0.0
 actions:
+  - target: $["paths"]["/v1/workflows/{workflowId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "WorkflowController_deleteWorkflowById"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.workflows.delete(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/organizations"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "EEOrganizationController_renameOrganization"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.organizations.eeOrganizationControllerRenameOrganization({\n    name: \"<value>\",\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/notifications/unseen"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_getUnseenCount"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.notifications.unseenCount({\n    seen: false,\n    subscriberId: \"<value>\",\n    limit: 2166.35,\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/feeds"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "FeedsController_createFeed"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.feeds.create({\n    name: \"<value>\",\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/topics"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "TopicsController_listTopics"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.topics.list({});\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/events/trigger/{transactionId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "EventsController_cancel"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.cancel(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/workflows"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "WorkflowController_listWorkflows"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.workflows.list({});\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/notifications"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "NotificationsController_listNotifications"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.notifications.list({\n    channels: [\n      \"chat\",\n    ],\n    templates: [\n      \"<value>\",\n    ],\n    emails: [\n      \"<value>\",\n    ],\n    search: \"<value>\",\n    subscriberIds: [\n      \"<value>\",\n    ],\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/changes/{changeId}/apply"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "ChangesController_applyDiff"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.changes.apply(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/bulk"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_bulkCreateSubscribers"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.subscribers.createBulk({\n    subscribers: [\n      \"<value>\",\n    ],\n  });\n\n  \n}\n\nrun();"
+  - target: $["paths"]["/v1/feeds"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "FeedsController_getFeeds"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.feeds.retrieve();\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/layouts/{layoutId}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "LayoutsController_updateLayout"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.layouts.update(\"<value>\", {\n    identifier: {},\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/integrations"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "IntegrationsController_createIntegration"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.integrations.create({\n    providerId: \"<value>\",\n    channel: \"sms\",\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/integrations/{integrationId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "IntegrationsController_removeIntegration"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.integrations.delete(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_createSubscriber"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.create({\n    subscriberId: \"<value>\",\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_updateSubscriber"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.update(\"<value>\", {});\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/notifications/feed"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_getNotificationsFeed"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.notifications.retrieve({\n    subscriberId: \"<value>\",\n    payload: \"btoa(JSON.stringify({ foo: 123 })) results in base64 encoded string like eyJmb28iOjEyM30=\",\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/tenants/{identifier}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "TenantController_removeTenant"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.tenants.delete(\"<value>\");\n\n  \n}\n\nrun();"
+  - target: $["paths"]["/v1/organizations/branding"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "EEOrganizationController_updateBrandingDetails"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.organizations.update({\n    logo: \"<value>\",\n    color: \"fuchsia\",\n    fontColor: \"<value>\",\n    contentBackground: \"<value>\",\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
   - target: $["paths"]["/v1/layouts"]["get"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
           "label": "LayoutsController_listLayouts"
           "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.layouts.list({});\n\n  \n}\n\nrun();"
-  - target: $["paths"]["/v1/subscribers/{subscriberId}"]["delete"]
+  - target: $["paths"]["/v1/environments/me"]["get"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "SubscribersController_removeSubscriber"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.delete("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/changes"]["get"]
+          "label": "EnvironmentsController_getCurrentEnvironment"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.environments.retrieve();\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/notifications/stats"]["get"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "ChangesController_getChanges"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.changes.retrieve({
-                promoted: "false",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/execution-details"]["get"]
+          "label": "NotificationsController_getActivityStats"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.notifications.stats.retrieve();\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/notification-groups/{id}"]["get"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "ExecutionDetailsController_getExecutionDetailsForNotification"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.executionDetails.retrieve("<value>", "<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
+          "label": "NotificationGroupsController_getNotificationGroup"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.workflowGroups.retrieve(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/integrations/{integrationId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "IntegrationsController_updateIntegrationById"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.integrations.update(\"<value>\", {});\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/messages/{messageId}/actions/{type}"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_markActionAsSeen"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.messages.updateAsSeen({\n    messageId: \"<value>\",\n    type: \"<value>\",\n    subscriberId: \"<value>\",\n    markMessageActionAsSeenDto: {\n      status: \"done\",\n    },\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
   - target: $["paths"]["/v1/layouts/{layoutId}/default"]["post"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
           "label": "LayoutsController_setDefaultLayout"
           "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.layouts.setAsDefault(\"<value>\");\n\n  \n}\n\nrun();"
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/messages/mark-all"]["post"]
+  - target: $["paths"]["/v1/events/trigger"]["post"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "SubscribersController_markAllUnreadAsRead"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.messages.markAll("<value>", {
-                markAs: "seen",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/online-status"]["patch"]
+          "label": "EventsController_trigger"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.trigger({\n    name: \"workflow_identifier\",\n    payload: {},\n    overrides: {},\n    to: [\n        {\n          topicKey: {},\n          type: \"Topic\",\n        },\n    ],\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/workflows"]["post"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "SubscribersController_updateSubscriberOnlineFlag"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.properties.updateOnlineFlag("<value>", {
-                isOnline: false,
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/preferences"]["patch"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_updateSubscriberGlobalPreferences"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.preferences.updateGlobal("<value>", {});
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/preferences/{parameter}"]["patch"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_updateSubscriberPreference"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.preferences.update({
-                subscriberId: "<value>",
-                parameter: "<value>",
-                updateSubscriberPreferenceRequestDto: {},
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/workflows/{workflowId}"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "WorkflowController_getWorkflowById"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.workflows.retrieve("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/changes/count"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "ChangesController_getChangesCount"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.changes.count();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/integrations/{integrationId}"]["delete"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "IntegrationsController_removeIntegration"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.integrations.delete("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/notification-groups/{id}"]["patch"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "NotificationGroupsController_updateNotificationGroup"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.workflowGroups.update("<value>", {
-                name: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
+          "label": "WorkflowController_create"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.workflows.create({\n    name: \"<value>\",\n    notificationGroupId: \"<value>\",\n    steps: [\n  \n    ],\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
   - target: $["paths"]["/v1/subscribers"]["get"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
           "label": "SubscribersController_listSubscribers"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.list(7685.78, 10);
-
-              for await (const page of result) {
-                // handle page
-              }
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/credentials"]["patch"]
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.list();\n\n  for await (const page of result) {\n    // handle page\n  }\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/online-status"]["patch"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "SubscribersController_modifySubscriberChannel"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.credentials.append("<value>", {
-                credentials: {
-                  webhookUrl: "<value>",
-                },
-                providerId: "zulip",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/tenants"]["get"]
+          "label": "SubscribersController_updateSubscriberOnlineFlag"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.properties.updateOnlineFlag(\"<value>\", {\n    isOnline: false,\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/feeds/{feedId}"]["delete"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "TenantController_listTenants"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.tenants.list(7685.78, 10);
-
-              for await (const page of result) {
-                // handle page
-              }
-            }
-
-            run();
-  - target: $["paths"]["/v1/tenants/{identifier}"]["patch"]
+          "label": "FeedsController_deleteFeedById"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.feeds.delete(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/topics"]["post"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "TenantController_updateTenant"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.tenants.update("<value>", {});
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
+          "label": "TopicsController_createTopic"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.topics.create({\n    key: {},\n    name: {},\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/topics/{topicKey}/subscribers/removal"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "TopicsController_removeSubscribers"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.topics.subscribers.delete(\"<value>\", {\n    subscribers: [\n      \"<value>\",\n    ],\n  });\n\n  \n}\n\nrun();"
+  - target: $["paths"]["/v1/events/trigger/bulk"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "EventsController_triggerBulk"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.triggerBulk({\n    events: [\n  \n    ],\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/environments"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "EnvironmentsController_listMyEnvironments"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.environments.list();\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/execution-details"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "ExecutionDetailsController_getExecutionDetailsForNotification"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.executionDetails.retrieve(\"<value>\", \"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/notifications/graph/stats"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "NotificationsController_getActivityGraphStats"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.notifications.stats.graph();\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/changes/bulk/apply"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "ChangesController_bulkApplyDiff"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.changes.applyBulk({\n    changeIds: [\n      \"<value>\",\n    ],\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/preferences/{parameter}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_getSubscriberPreferenceByLevel"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.preferences.retrieveByLevel(\"Topic\", \"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/credentials/{providerId}/oauth"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_chatAccessOauth"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.subscribers.authentication.chatAccessOauth({\n    subscriberId: \"<value>\",\n    providerId: \"<value>\",\n    hmacHash: \"<value>\",\n    environmentId: \"<value>\",\n  });\n\n  \n}\n\nrun();"
   - target: $["paths"]["/v1/workflows/{workflowId}"]["put"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
           "label": "WorkflowController_updateWorkflowById"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.workflows.update("<value>", {
-                name: "<value>",
-                notificationGroupId: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.workflows.update(\"<value>\", {\n    name: \"<value>\",\n    notificationGroupId: \"<value>\",\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/changes/count"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "ChangesController_getChangesCount"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.changes.count();\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/preferences"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_listSubscriberPreferences"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.preferences.list(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/credentials/{providerId}/oauth/callback"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_chatOauthCallback"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.authentication.chatAccessOauthCallBack({\n    subscriberId: \"<value>\",\n    providerId: \"<value>\",\n    code: \"<value>\",\n    hmacHash: \"<value>\",\n    environmentId: \"<value>\",\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/organizations/me"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "EEOrganizationController_getMyOrganization"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.organizations.retrieve();\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/changes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "ChangesController_getChanges"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.changes.retrieve({\n    promoted: \"false\",\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/messages/mark-as"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_markMessagesAs"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.messages.markAllAs(\"<value>\", {\n  messageId: \"<value>\",\n    markAs: \"seen\",\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/topics/{topicKey}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "TopicsController_getTopic"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.topics.retrieve(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/tenants/{identifier}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "TenantController_updateTenant"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.tenants.update(\"<value>\", {});\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/integrations"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "IntegrationsController_listIntegrations"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.integrations.list();\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/integrations/active"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "IntegrationsController_getActiveIntegrations"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.integrations.listActive();\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/integrations/webhook/provider/{providerOrIntegrationId}/status"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "IntegrationsController_getWebhookSupportStatus"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.integrations.webhooks.retrieve(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/messages/mark-all"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_markAllUnreadAsRead"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.messages.markAll(\"<value>\", {\n    markAs: \"seen\",\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/tenants"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "TenantController_createTenant"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.tenants.create({\n    identifier: \"<value>\",\n    name: \"<value>\",\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/events/trigger/broadcast"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "EventsController_broadcastEventToAll"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.triggerBroadcast({\n    name: \"<value>\",\n    payload: {},\n    overrides: {},\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/integrations/{integrationId}/set-primary"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "IntegrationsController_setIntegrationAsPrimary"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.integrations.setAsPrimary(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/credentials"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_modifySubscriberChannel"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.credentials.append(\"<value>\", {\n    providerId: 3462.44,\n    credentials: {\n      webhookUrl: \"<value>\",\n    },\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/credentials/{providerId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_deleteSubscriberCredentials"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.subscribers.credentials.delete(\"<value>\", \"<value>\");\n\n  \n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/preferences"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_updateSubscriberGlobalPreferences"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.preferences.updateGlobal(\"<value>\", {});\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/environments/api-keys"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "EnvironmentsController_listOrganizationApiKeys"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.environments.apiKeys.list();\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/notification-groups"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "NotificationGroupsController_listNotificationGroups"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.workflowGroups.list();\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/messages"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "MessagesController_getMessages"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.messages.retrieve({});\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/topics/{topicKey}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "TopicsController_deleteTopic"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.topics.delete(\"<value>\");\n\n  \n}\n\nrun();"
+  - target: $["paths"]["/v1/tenants/{identifier}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "TenantController_getTenantById"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.tenants.retrieve(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
   - target: $["paths"]["/v1/environments/api-keys/regenerate"]["post"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
           "label": "EnvironmentsController_regenerateOrganizationApiKeys"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.environments.apiKeys.regenerate();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/notification-groups/{id}"]["get"]
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.environments.apiKeys.regenerate();\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/workflows/variables"]["get"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "NotificationGroupsController_getNotificationGroup"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.workflowGroups.retrieve("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
+          "label": "WorkflowController_getWorkflowVariables"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.workflows.variables.retrieve();\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/notification-groups/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "NotificationGroupsController_deleteNotificationGroup"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.workflowGroups.delete(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/credentials"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_updateSubscriberChannel"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.credentials.update(\"<value>\", {\n    providerId: 8574.78,\n    credentials: {\n      webhookUrl: \"<value>\",\n    },\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/layouts"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "LayoutsController_PropertyDescriptor"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.layouts.create();\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/layouts/{layoutId}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "LayoutsController_getLayout"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.layouts.retrieve(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/topics/{topicKey}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "TopicsController_renameTopic"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.topics.rename(\"<value>\", {\n    name: {},\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_removeSubscriber"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.delete(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}/preferences/{parameter}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "typescript"
+          "label": "SubscribersController_updateSubscriberPreference"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.preferences.update({\n    subscriberId: \"<value>\",\n    parameter: \"<value>\",\n    updateSubscriberPreferenceRequestDto: {},\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
   - target: $["paths"]["/v1/layouts/{layoutId}"]["delete"]
     update:
       "x-codeSamples":
@@ -408,1356 +452,64 @@ actions:
       "x-codeSamples":
         - "lang": "typescript"
           "label": "MessagesController_deleteMessage"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.messages.delete("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/notifications/stats"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "NotificationsController_getActivityStats"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.notifications.stats.retrieve();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/environments"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "EnvironmentsController_listMyEnvironments"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.environments.list();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/integrations/{integrationId}/set-primary"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "IntegrationsController_setIntegrationAsPrimary"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.integrations.setAsPrimary("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/credentials/{providerId}/oauth"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_chatAccessOauth"
-          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.subscribers.authentication.chatAccessOauth({\n    subscriberId: \"<value>\",\n    providerId: \"<value>\",\n    hmacHash: \"<value>\",\n    environmentId: \"<value>\",\n  });\n\n  \n}\n\nrun();"
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/preferences/{parameter}"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_getSubscriberPreferenceByLevel"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.preferences.retrieveByLevel("Topic", "<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/tenants"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "TenantController_createTenant"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.tenants.create({
-                identifier: "<value>",
-                name: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/topics/{topicKey}/subscribers/{externalSubscriberId}"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "TopicsController_getTopicSubscriber"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.topics.subscribers.retrieve("<value>", "<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/feeds/{feedId}"]["delete"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "FeedsController_deleteFeedById"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.feeds.delete("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/notifications/{notificationId}"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "NotificationsController_getNotification"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.notifications.retrieve("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/workflows/{workflowId}"]["delete"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "WorkflowController_deleteWorkflowById"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.workflows.delete("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/workflows/{workflowId}/status"]["put"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "WorkflowController_updateActiveStatus"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.workflows.status.update("<value>", {
-                active: false,
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/messages/transaction/{transactionId}"]["delete"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "MessagesController_deleteMessagesByTransactionId"
-          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.messages.deleteByTransactionId(\"<value>\", \"push\");\n\n  \n}\n\nrun();"
-  - target: $["paths"]["/v1/notification-groups"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "NotificationGroupsController_listNotificationGroups"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.workflowGroups.list();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/organizations/branding"]["put"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "OrganizationController_updateBrandingDetails"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.organizations.branding.update({
-                color: "fuchsia",
-                contentBackground: "<value>",
-                fontColor: "<value>",
-                logo: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/{subscriberId}"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_getSubscriber"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.retrieve("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/messages/{messageId}/actions/{type}"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_markActionAsSeen"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.messages.updateAsSeen({
-                messageId: "<value>",
-                type: "<value>",
-                subscriberId: "<value>",
-                markMessageActionAsSeenDto: {
-                  status: "done",
-                },
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/tenants/{identifier}"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "TenantController_getTenantById"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.tenants.retrieve("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/topics/{topicKey}"]["patch"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "TopicsController_renameTopic"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.topics.rename("<value>", {
-                name: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/integrations"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "IntegrationsController_createIntegration"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.integrations.create({
-                channel: "sms",
-                providerId: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/organizations"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "OrganizationController_listOrganizations"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.organizations.list();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/organizations"]["patch"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "OrganizationController_rename"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.organizations.rename({
-                name: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_createSubscriber"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.create({
-                subscriberId: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/preferences"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_listSubscriberPreferences"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.preferences.list("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/topics"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "TopicsController_listTopics"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.topics.list({});
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/environments/me"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "EnvironmentsController_getCurrentEnvironment"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.environments.retrieve();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/notifications/graph/stats"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "NotificationsController_getActivityGraphStats"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.notifications.stats.graph(4018.61);
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/workflows"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "WorkflowController_listWorkflows"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.workflows.list({});
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/workflows/variables"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "WorkflowController_getWorkflowVariables"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.workflows.variables.retrieve();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/events/trigger/{transactionId}"]["delete"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "EventsController_cancel"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.events.cancel("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/notification-groups"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "NotificationGroupsController_createNotificationGroup"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.workflowGroups.create({
-                name: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/environments/api-keys"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "EnvironmentsController_listOrganizationApiKeys"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.environments.apiKeys.list();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/integrations"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "IntegrationsController_listIntegrations"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.integrations.list();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/messages"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "MessagesController_getMessages"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.messages.retrieve({});
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/topics/{topicKey}/subscribers/removal"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "TopicsController_removeSubscribers"
-          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.topics.subscribers.delete(\"<value>\", {\n    subscribers: [\n      \"<value>\",\n    ],\n  });\n\n  \n}\n\nrun();"
-  - target: $["paths"]["/v1/events/trigger"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "EventsController_trigger"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.trigger({
-                name: "workflow_identifier",
-                overrides: {},
-                payload: {},
-                to: [
-                    {
-                      topicKey: "topic_key",
-                      type: "Topic",
-                    },
-                ],
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/changes/{changeId}/apply"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "ChangesController_applyDiff"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.changes.apply("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/tenants/{identifier}"]["delete"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "TenantController_removeTenant"
-          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.tenants.delete(\"<value>\");\n\n  \n}\n\nrun();"
-  - target: $["paths"]["/v1/workflows"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "WorkflowController_create"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.workflows.create({
-                name: "<value>",
-                notificationGroupId: "<value>",
-                steps: [
-                  {},
-                ],
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/organizations/me"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "OrganizationController_getSelfOrganizationData"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.organizations.retrieve();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/notifications/unseen"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_getUnseenCount"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.notifications.unseenCount({
-                seen: false,
-                subscriberId: "<value>",
-                limit: 2166.35,
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/credentials"]["put"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_updateSubscriberChannel"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.credentials.update("<value>", {
-                credentials: {
-                  webhookUrl: "<value>",
-                },
-                providerId: "pushpad",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/credentials/{providerId}/oauth/callback"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_chatOauthCallback"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.authentication.chatAccessOauthCallBack({
-                subscriberId: "<value>",
-                providerId: "<value>",
-                code: "<value>",
-                hmacHash: "<value>",
-                environmentId: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/integrations/{integrationId}"]["put"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "IntegrationsController_updateIntegrationById"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.integrations.update("<value>", {});
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/bulk"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_bulkCreateSubscribers"
-          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.subscribers.createBulk({\n    subscribers: [\n      {\n        subscriberId: \"<value>\",\n      },\n    ],\n  });\n\n  \n}\n\nrun();"
-  - target: $["paths"]["/v1/layouts"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "LayoutsController_PropertyDescriptor"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.layouts.create();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/organizations/members"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "OrganizationController_listOrganizationMembers"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.organizations.members.list();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/organizations/members/{memberId}"]["delete"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "OrganizationController_remove"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.organizations.members.delete("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/events/trigger/bulk"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "EventsController_triggerBulk"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.events.triggerBulk({
-                events: [
-                  {
-                    name: "workflow_identifier",
-                    overrides: {},
-                    payload: {},
-                    to: [
-                        {
-                          topicKey: "topic_key",
-                          type: "Topic",
-                        },
-                    ],
-                  },
-                ],
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/feeds"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "FeedsController_createFeed"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.feeds.create({
-                name: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/layouts/{layoutId}"]["patch"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "LayoutsController_updateLayout"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.layouts.update("<value>", {
-                identifier: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/credentials/{providerId}"]["delete"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_deleteSubscriberCredentials"
-          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.subscribers.credentials.delete(\"<value>\", \"<value>\");\n\n  \n}\n\nrun();"
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/notifications/feed"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_getNotificationsFeed"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.notifications.retrieve({
-                subscriberId: "<value>",
-                payload: "btoa(JSON.stringify({ foo: 123 })) results in base64 encoded string like eyJmb28iOjEyM30=",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/events/trigger/broadcast"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "EventsController_broadcastEventToAll"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.events.triggerBroadcast({
-                name: "<value>",
-                overrides: {},
-                payload: {},
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/integrations/active"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "IntegrationsController_getActiveIntegrations"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.integrations.listActive();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/layouts/{layoutId}"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "LayoutsController_getLayout"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.layouts.retrieve("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/{subscriberId}/messages/mark-as"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "SubscribersController_markMessagesAs"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.messages.markAllAs("<value>", {
-                markAs: "seen",
-              messageId: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/topics"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "typescript"
-          "label": "TopicsController_createTopic"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.topics.create({
-                key: "<key>",
-                name: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.messages.delete(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
   - target: $["paths"]["/v1/topics/{topicKey}/subscribers"]["post"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
           "label": "TopicsController_addSubscribers"
           "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.topics.subscribers.assign(\"<value>\", {\n    subscribers: [\n      \"<value>\",\n    ],\n  });\n\n  \n}\n\nrun();"
-  - target: $["paths"]["/v1/feeds"]["get"]
+  - target: $["paths"]["/v1/workflows/{workflowId}"]["get"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "FeedsController_getFeeds"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.feeds.retrieve();
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/integrations/webhook/provider/{providerOrIntegrationId}/status"]["get"]
+          "label": "WorkflowController_getWorkflowById"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.workflows.retrieve(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/notifications/{notificationId}"]["get"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "IntegrationsController_getWebhookSupportStatus"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.integrations.webhooks.retrieve("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/notifications"]["get"]
+          "label": "NotificationsController_getNotification"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.notifications.retrieve(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/notification-groups/{id}"]["patch"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "NotificationsController_listNotifications"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.notifications.list({
-                channels: [
-                  "chat",
-                ],
-                templates: [
-                  "<value>",
-                ],
-                emails: [
-                  "<value>",
-                ],
-                search: "<value>",
-                subscriberIds: [
-                  "<value>",
-                ],
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/organizations"]["post"]
+          "label": "NotificationGroupsController_updateNotificationGroup"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.workflowGroups.update(\"<value>\", {\n    name: \"<value>\",\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/messages/transaction/{transactionId}"]["delete"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "OrganizationController_createOrganization"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.organizations.create({
-                name: "<value>",
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/subscribers/{subscriberId}"]["put"]
+          "label": "MessagesController_deleteMessagesByTransactionId"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.messages.deleteByTransactionId(\"<value>\");\n\n  \n}\n\nrun();"
+  - target: $["paths"]["/v1/topics/{topicKey}/subscribers/{externalSubscriberId}"]["get"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "SubscribersController_updateSubscriber"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.subscribers.update("<value>", {});
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/topics/{topicKey}"]["delete"]
+          "label": "TopicsController_getTopicSubscriber"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.topics.subscribers.retrieve(\"<value>\", \"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/tenants"]["get"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "TopicsController_deleteTopic"
-          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  await novu.topics.delete(\"<value>\");\n\n  \n}\n\nrun();"
-  - target: $["paths"]["/v1/topics/{topicKey}"]["get"]
+          "label": "TenantController_listTenants"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.tenants.list();\n\n  for await (const page of result) {\n    // handle page\n  }\n}\n\nrun();"
+  - target: $["paths"]["/v1/workflows/{workflowId}/status"]["put"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "TopicsController_getTopic"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.topics.retrieve("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/changes/bulk/apply"]["post"]
+          "label": "WorkflowController_updateActiveStatus"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.workflows.status.update(\"<value>\", {\n    active: false,\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/notification-groups"]["post"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "ChangesController_bulkApplyDiff"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.changes.applyBulk({
-                changeIds: [
-                  "<value>",
-                ],
-              });
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
-  - target: $["paths"]["/v1/notification-groups/{id}"]["delete"]
+          "label": "NotificationGroupsController_createNotificationGroup"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.workflowGroups.create({\n    name: \"<value>\",\n  });\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+  - target: $["paths"]["/v1/subscribers/{subscriberId}"]["get"]
     update:
       "x-codeSamples":
         - "lang": "typescript"
-          "label": "NotificationGroupsController_deleteNotificationGroup"
-          "source": |-
-            import { Novu } from "@novu/api";
-
-            const novu = new Novu({
-              apiKey: "<YOUR_API_KEY_HERE>",
-            });
-
-            async function run() {
-              const result = await novu.workflowGroups.delete("<value>");
-
-              // Handle the result
-              console.log(result)
-            }
-
-            run();
+          "label": "SubscribersController_getSubscriber"
+          "source": "import { Novu } from \"@novu/api\";\n\nconst novu = new Novu({\n  apiKey: \"<YOUR_API_KEY_HERE>\",\n});\n\nasync function run() {\n  const result = await novu.subscribers.retrieve(\"<value>\");\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"

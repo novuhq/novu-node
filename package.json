@@ -1,12 +1,12 @@
 {
   "name": "@novu/api",
-  "version": "0.0.1-alpha.9",
-  "author": "Novu",  
+  "version": "0.0.1-alpha.10",
+  "author": "Novu",
   "main": "./index.js",
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/novuhq/novu-node.git"
+    "url": "https://github.com/novuhq/novu-ts.git"
   },
   "scripts": {
     "lint": "eslint --max-warnings=0 src",
@@ -17,7 +17,6 @@
     "zod": ">= 3"
   },
   "devDependencies": {
-    "@types/jsonpath": "^0.2.4",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
     "eslint": "^8.57.0",
@@ -27,6 +26,6 @@
     "zod": "^3.23.4"
   },
   "dependencies": {
-    "jsonpath": "^1.1.1"
+    
   }
 }

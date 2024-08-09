@@ -78,9 +78,7 @@ const novu = new Novu({
 async function run() {
   await novu.subscribers.createBulk({
     subscribers: [
-      {
-        subscriberId: "<value>",
-      },
+      "<value>",
     ],
   });
 
@@ -165,7 +163,7 @@ const novu = new Novu({
 });
 
 async function run() {
-  const result = await novu.subscribers.list(7685.78, 10);
+  const result = await novu.subscribers.list();
 
   for await (const page of result) {
     // handle page

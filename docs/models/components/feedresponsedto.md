@@ -5,8 +5,8 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `environmentId`    | *string*           | :heavy_check_mark: | N/A                |
-| `id`               | *string*           | :heavy_minus_sign: | N/A                |
-| `organizationId`   | *string*           | :heavy_check_mark: | N/A                |
-| `identifier`       | *string*           | :heavy_check_mark: | N/A                |
-| `name`             | *string*           | :heavy_check_mark: | N/A                |
+| `data`             | *string*[]         | :heavy_check_mark: | N/A                |
+| `hasMore`          | *boolean*          | :heavy_check_mark: | N/A                |
+| `page`             | *number*           | :heavy_check_mark: | N/A                |
+| `pageSize`         | *number*           | :heavy_check_mark: | N/A                |
+| `totalCount`       | *number*           | :heavy_minus_sign: | N/A                |

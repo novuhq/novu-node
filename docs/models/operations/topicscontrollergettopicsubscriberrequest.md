@@ -3,7 +3,7 @@
 
 ## Fields
 
-| Field                  | Type                   | Required               | Description            |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `topicKey`             | *string*               | :heavy_check_mark:     | N/A                    |
-| `externalSubscriberId` | *string*               | :heavy_check_mark:     | N/A                    |
+| Field                      | Type                       | Required                   | Description                |
+| -------------------------- | -------------------------- | -------------------------- | -------------------------- |
+| `externalSubscriberId`     | *string*                   | :heavy_check_mark:         | The external subscriber id |
+| `topicKey`                 | *string*                   | :heavy_check_mark:         | The topic key              |

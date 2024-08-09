@@ -46,6 +46,26 @@ For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
 <!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
 
+### Cancel Triggered Event
+
+```typescript
+import { Novu } from "@novu/api";
+
+const novu = new Novu({
+    apiKey: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+    const result = await novu.cancel("<value>");
+
+    // Handle the result
+    console.log(result);
+}
+
+run();
+
+```
+
 ### Trigger Notification Event
 
 ```typescript
@@ -62,10 +82,56 @@ async function run() {
         payload: {},
         to: [
             {
-                topicKey: "topic_key",
+                topicKey: {},
                 type: "Topic",
             },
         ],
+    });
+
+    // Handle the result
+    console.log(result);
+}
+
+run();
+
+```
+
+### Broadcast Event to All
+
+```typescript
+import { Novu } from "@novu/api";
+
+const novu = new Novu({
+    apiKey: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+    const result = await novu.triggerBroadcast({
+        name: "<value>",
+        overrides: {},
+        payload: {},
+    });
+
+    // Handle the result
+    console.log(result);
+}
+
+run();
+
+```
+
+### Trigger Notification Events in Bulk
+
+```typescript
+import { Novu } from "@novu/api";
+
+const novu = new Novu({
+    apiKey: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+    const result = await novu.triggerBulk({
+        events: [],
     });
 
     // Handle the result
@@ -82,7 +148,10 @@ run();
 
 ### [Novu SDK](docs/sdks/novu/README.md)
 
+* [cancel](docs/sdks/novu/README.md#cancel) - Cancel triggered event
 * [trigger](docs/sdks/novu/README.md#trigger) - Trigger event
+* [triggerBroadcast](docs/sdks/novu/README.md#triggerbroadcast) - Broadcast event to all
+* [triggerBulk](docs/sdks/novu/README.md#triggerbulk) - Bulk trigger event
 
 ### [changes](docs/sdks/changes/README.md)
 
@@ -100,12 +169,6 @@ run();
 
 * [list](docs/sdks/apikeys/README.md#list) - Get api keys
 * [regenerate](docs/sdks/apikeys/README.md#regenerate) - Regenerate api keys
-
-### [events](docs/sdks/events/README.md)
-
-* [cancel](docs/sdks/events/README.md#cancel) - Cancel triggered event
-* [triggerBroadcast](docs/sdks/events/README.md#triggerbroadcast) - Broadcast event to all
-* [triggerBulk](docs/sdks/events/README.md#triggerbulk) - Bulk trigger event
 
 ### [executionDetails](docs/sdks/executiondetails/README.md)
 
@@ -165,19 +228,9 @@ run();
 
 ### [organizations](docs/sdks/organizations/README.md)
 
-* [create](docs/sdks/organizations/README.md#create) - Create an organization
-* [list](docs/sdks/organizations/README.md#list) - Fetch all organizations
-* [rename](docs/sdks/organizations/README.md#rename) - Rename organization name
+* [eeOrganizationControllerRenameOrganization](docs/sdks/organizations/README.md#eeorganizationcontrollerrenameorganization) - Rename organization name
 * [retrieve](docs/sdks/organizations/README.md#retrieve) - Fetch current organization details
-
-### [organizations.branding](docs/sdks/branding/README.md)
-
-* [update](docs/sdks/branding/README.md#update) - Update organization branding details
-
-### [organizations.members](docs/sdks/members/README.md)
-
-* [delete](docs/sdks/members/README.md#delete) - Remove a member from organization using memberId
-* [list](docs/sdks/members/README.md#list) - Fetch all members of current organizations
+* [update](docs/sdks/organizations/README.md#update) - Update organization branding details
 
 ### [subscribers](docs/sdks/subscribers/README.md)
 
@@ -280,7 +333,7 @@ const novu = new Novu({
 });
 
 async function run() {
-    const result = await novu.subscribers.list(7685.78, 10);
+    const result = await novu.subscribers.list();
 
     for await (const page of result) {
         // handle page
@@ -315,17 +368,7 @@ const novu = new Novu({
 async function run() {
     let result;
     try {
-        result = await novu.trigger({
-            name: "workflow_identifier",
-            overrides: {},
-            payload: {},
-            to: [
-                {
-                    topicKey: "topic_key",
-                    type: "Topic",
-                },
-            ],
-        });
+        result = await novu.cancel("<value>");
     } catch (err) {
         switch (true) {
             case err instanceof SDKValidationError: {
@@ -371,17 +414,7 @@ const novu = new Novu({
 });
 
 async function run() {
-    const result = await novu.trigger({
-        name: "workflow_identifier",
-        overrides: {},
-        payload: {},
-        to: [
-            {
-                topicKey: "topic_key",
-                type: "Topic",
-            },
-        ],
-    });
+    const result = await novu.cancel("<value>");
 
     // Handle the result
     console.log(result);
@@ -405,17 +438,7 @@ const novu = new Novu({
 });
 
 async function run() {
-    const result = await novu.trigger({
-        name: "workflow_identifier",
-        overrides: {},
-        payload: {},
-        to: [
-            {
-                topicKey: "topic_key",
-                type: "Topic",
-            },
-        ],
-    });
+    const result = await novu.cancel("<value>");
 
     // Handle the result
     console.log(result);
@@ -495,17 +518,7 @@ const novu = new Novu({
 });
 
 async function run() {
-    const result = await novu.trigger({
-        name: "workflow_identifier",
-        overrides: {},
-        payload: {},
-        to: [
-            {
-                topicKey: "topic_key",
-                type: "Topic",
-            },
-        ],
-    });
+    const result = await novu.cancel("<value>");
 
     // Handle the result
     console.log(result);
@@ -530,31 +543,18 @@ const novu = new Novu({
 });
 
 async function run() {
-    const result = await novu.trigger(
-        {
-            name: "workflow_identifier",
-            overrides: {},
-            payload: {},
-            to: [
-                {
-                    topicKey: "topic_key",
-                    type: "Topic",
-                },
-            ],
-        },
-        {
-            retries: {
-                strategy: "backoff",
-                backoff: {
-                    initialInterval: 1,
-                    maxInterval: 50,
-                    exponent: 1.1,
-                    maxElapsedTime: 100,
-                },
-                retryConnectionErrors: false,
+    const result = await novu.cancel("<value>", {
+        retries: {
+            strategy: "backoff",
+            backoff: {
+                initialInterval: 1,
+                maxInterval: 50,
+                exponent: 1.1,
+                maxElapsedTime: 100,
             },
-        }
-    );
+            retryConnectionErrors: false,
+        },
+    });
 
     // Handle the result
     console.log(result);
@@ -583,17 +583,7 @@ const novu = new Novu({
 });
 
 async function run() {
-    const result = await novu.trigger({
-        name: "workflow_identifier",
-        overrides: {},
-        payload: {},
-        to: [
-            {
-                topicKey: "topic_key",
-                type: "Topic",
-            },
-        ],
-    });
+    const result = await novu.cancel("<value>");
 
     // Handle the result
     console.log(result);

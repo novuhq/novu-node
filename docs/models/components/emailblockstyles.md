@@ -5,4 +5,4 @@
 
 | Field                                                        | Type                                                         | Required                                                     | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `textAlign`                                                  | [components.TextAlign](../../models/components/textalign.md) | :heavy_minus_sign:                                           | N/A                                                          |
+| `textAlign`                                                  | [components.TextAlign](../../models/components/textalign.md) | :heavy_check_mark:                                           | N/A                                                          |
