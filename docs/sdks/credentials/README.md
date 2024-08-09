@@ -26,7 +26,7 @@ async function run() {
     credentials: {
       webhookUrl: "<value>",
     },
-    providerId: "zulip",
+    providerId: 3462.44,
   });
 
   // Handle the result
@@ -116,7 +116,7 @@ async function run() {
     credentials: {
       webhookUrl: "<value>",
     },
-    providerId: "pushpad",
+    providerId: 8574.78,
   });
 
   // Handle the result

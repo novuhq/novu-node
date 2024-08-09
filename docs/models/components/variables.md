@@ -1,5 +1,7 @@
 # Variables
 
+User defined variables to render in the layout placeholders.
+
 
 ## Fields
 

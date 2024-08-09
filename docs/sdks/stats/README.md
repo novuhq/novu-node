@@ -20,7 +20,7 @@ const novu = new Novu({
 });
 
 async function run() {
-  const result = await novu.notifications.stats.graph(4018.61);
+  const result = await novu.notifications.stats.graph();
 
   // Handle the result
   console.log(result)

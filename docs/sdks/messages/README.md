@@ -68,7 +68,7 @@ const novu = new Novu({
 });
 
 async function run() {
-  await novu.messages.deleteByTransactionId("<value>", "push");
+  await novu.messages.deleteByTransactionId("<value>");
 
   
 }

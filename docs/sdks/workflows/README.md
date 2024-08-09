@@ -32,7 +32,7 @@ async function run() {
     name: "<value>",
     notificationGroupId: "<value>",
     steps: [
-      {},
+  
     ],
   });
 

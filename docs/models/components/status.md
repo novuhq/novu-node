@@ -1,13 +1,10 @@
 # Status
 
+The status enum for the performed action
+
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `Success`          | Success            |
-| `Warning`          | Warning            |
-| `Failed`           | Failed             |
-| `Pending`          | Pending            |
-| `Queued`           | Queued             |
-| `ReadConfirmation` | ReadConfirmation   |
+| Name      | Value     |
+| --------- | --------- |
+| `Deleted` | deleted   |
